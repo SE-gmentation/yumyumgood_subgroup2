@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import manager
 
 class Profile(models.Model):
     ROLE_CHOICES = (
@@ -14,6 +15,7 @@ class Profile(models.Model):
 
 class Cafeteria(models.Model):
     name = models.CharField(max_length=20)
+    manager = models.ForeignKey("Profile", on_delete=models.SET_NULL, null=True)
 
 class Menu(models.Model):
     MEAL_CHOICES = (
@@ -29,3 +31,4 @@ class Menu(models.Model):
     sale_date = models.DateField()
     quantity = models.PositiveIntegerField(null=True)
     foods = models.TextField()
+    cafeteria = models.ForeignKey("Cafeteria", on_delete=models.CASCADE)
