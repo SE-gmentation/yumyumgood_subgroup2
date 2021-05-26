@@ -1,0 +1,63 @@
+:root{
+    --space: 5px;
+    --blue: #5091F4;
+    --blue-dark: darken(--blue, 5%);
+}
+body{
+  font-family: 'Helvetica', arial;
+}
+
+/* button */
+.btn{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+}
+
+btn:hover{
+background: --blue-dark;
+}
+
+.btn-calendar{
+  outline:none;
+  font-size: x-large;
+}
+
+.btn-control{
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  position: absolute; right: 5px; top: 0;
+}
+.btn-control:hover{
+    color: darken(white, 10%);
+}
+  
+
+/* modal */
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+.modal-dialog{
+  background: white;
+  border: var(--blue) solid 1px;
+  margin: var(--space) auto;
+  width: 80%;
+}
+
+.modal-body{
+  padding: --space;
+}
+
+.modal-header{
+  padding: --space/2 --space;
+}
+ 

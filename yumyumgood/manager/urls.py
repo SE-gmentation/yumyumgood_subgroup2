@@ -21,8 +21,7 @@ register_converter(DateConverter, 'yyyy')
 
 urlpatterns = [
     path("", initial_page, name="initial_page"),
-
+    path("menu/", manager_page, name="manager"),
     path("menumanage/<yyyy:date>/", menu_read, name="menu_read"),
-    path("menumanage/<yyyy:date>/update/", menu_update, name="menu_update")
-
+    path("menumanage/<yyyy:date>/update/", menu_update, name="menu_update"),
 ]

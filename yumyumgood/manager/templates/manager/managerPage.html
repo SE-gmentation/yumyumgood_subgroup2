@@ -1,21 +1,24 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>학식당 메뉴 관리</title>
 
   <!-- icon -->
   <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="{% static 'css/modal.css' %}">
 </head>
 <body>
   <div class="wrap">
     <h1>Manager Page</h1>
     
-    <button type="button" onclick="location.href='#modal-calendar'" class="btn">
-    <i class="far fa-calendar"></i>
-  </button>
+    <button id="btn-calendar" class="btn btn-calendar">
+      <i class="far fa-calendar"></i>
+    </button>
     
   </div>
    
@@ -33,6 +36,21 @@
     </div>
   </div>
   <!-- /Modal -->
+
+  <script>
+    var modal = document.getElementById("modal-calendar");
+    var btn = document.getElementById("btn-calendar");
+    
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
   
 </body>
 </html>
