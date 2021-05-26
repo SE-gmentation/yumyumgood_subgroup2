@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Initial Page(초기 진입 화면)</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href = "{% static 'css/initialpage.css' %}">
+    </head>
+    <body>
+        <div class = "body">
+            <div id="header" style="padding: 30px 0px;">
+                <div id="name">
+                    <span>
+                        식당이름
+                    </span>
+                </div>
+                <div id="name">
+                    <span>
+                        식당 담당자
+                    </span>
+                </div>
+            </div>
+            
+            <div id= "body">
+                <div id="meal-button">
+                    <a href=""><span>중식</span></a>
+                </div>
+                <div id="button">
+                    <ul>
+                        <li><a href="">QR 코드 스캔</a></li>
+                        <li><a href="">판매 현황 조회</a></li>
+                        <li><a href="">메뉴 상태 관리</a></li>
+                    </ul>
+                </div>
+    
+            </div>
+        </div>
+            
+        
+    </body>
+</html>
