@@ -53,7 +53,15 @@
                             {% if menus.meal == '조식' %}
                                 <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
                                 <span class="food-name">{{ menus.name }}</span>
-                                <button value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</button>
+
+                                <select name="status[{{ menus.id }}]">
+                                    {% if menus.status == '판매 가능' %}
+                                    <optiion class="pos" value="판매 가능">{{ menus.status }}</option>
+                                    {% else %}
+                                    <optiion class="neg" value="판매 중지">{{ menus.status }}</optiion>
+                                    {% endif %}
+                                </select>
+                                
 
                                 <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
                             {% endif %}
@@ -69,7 +77,13 @@
                             {% if menus.meal == '중식' %}
                                 <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
                                 <span class="food-name">{{ menus.name }}</span>
-                                <button value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</button>
+                                <select name="status[{{ menus.id }}]">
+                                    {% if menus.status == '판매 가능' %}
+                                    <optiion class="pos" value="판매 가능">{{ menus.status }}</option>
+                                    {% else %}
+                                    <optiion class="neg" value="판매 중지">{{ menus.status }}</optiion>
+                                    {% endif %}
+                                </select>
                                 
                                 <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
                             {% endif %}
@@ -85,7 +99,13 @@
                             {% if menus.meal == '석식' %}
                                 <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
                                 <span class="food-name">{{ menus.name }}</span>
-                                <button value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</button>
+                                <select name="status[{{ menus.id }}]">
+                                    {% if menus.status == '판매 가능' %}
+                                    <optiion class="pos" value="판매 가능">{{ menus.status }}</option>
+                                    {% else %}
+                                    <optiion class="neg" value="판매 중지">{{ menus.status }}</optiion>
+                                    {% endif %}
+                                </select>
 
                                 <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
                             {% endif %}
@@ -96,12 +116,11 @@
                 </div>
 
             </div>
-    
         
         </form>
      
-    
-
+=
+        
 
     
     </body>

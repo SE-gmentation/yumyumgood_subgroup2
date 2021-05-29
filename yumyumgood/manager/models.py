@@ -40,7 +40,7 @@ class Menu(models.Model):
     sale_date = models.DateField()
     quantity = models.PositiveIntegerField(null=True)
     foods = models.TextField()
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, null=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="판매 가능", null=True)
     cafeteria = models.ForeignKey("Cafeteria", on_delete=models.CASCADE)
 
     def getPk(self) :
