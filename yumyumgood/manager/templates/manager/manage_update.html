@@ -26,93 +26,78 @@
         
     </head>
     <body>
-        
-        <form action="{% url 'manager:menu_update' nowdate %}" method="POST" enctype="multipart/form-data" id="menu_update">
-            {% csrf_token %}
-
-            <div class="header">
-                <a href="{% url 'manager:initial_page' %}"><</a>
-            </div>
-
-            <div class="choose-date">
-                <div class="modal-btns">
-                <span>
-                    <button type="submit" id="update-btn" class="update-btn">저장하기</button>
-                </span>
-                </div> 
-            </div>
-
-            <div class="menus">
+        <div class="wrap">
+            <form action="{% url 'manager:menu_update' nowdate %}" method="POST" enctype="multipart/form-data" id="menu_update">
+                {% csrf_token %}
+    
+                <div class="header">
+                    <a href="{% url 'manager:initial_page' %}"><i class="fas fa-chevron-left"></i></a>
+                </div>    
                 
-                        <!-- <div class="food-name">{{ menus.foods }}</div> -->
-                <div class="a">
-                    <div class="meal-time">조식</div>
-                    {% for menus in menus %}
+                <div class="choose-date">
+                    <div class="date-btns">
+                        <span id="now-date">{{ year }}년 {{ month }}월 {{ day }}일</span>
+                    <div class="update-bar">
+                        <button type="submit" id="update-btn" class="update-btn">저장하기</button>
+                    </div> 
+                </div>
+
+
+                <div class="menus">
+                    <div class="meal">
+                        <div class="meal-time">조식</div>
+                        {% for menus in menus %}
                         {% if menus.cafeteria.name == cafe %}
-                            <div>
+                        <div class="menu">
                             {% if menus.meal == '조식' %}
-                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
-                                <span class="food-name">{{ menus.name }}</span>
-
-                                <select name="status[{{ menus.id }}]">
-                                    {% if menus.status == '판매 가능' %}
-                                    <optiion class="pos" value="판매 가능">{{ menus.status }}</option>
-                                    {% else %}
-                                    <optiion class="neg" value="판매 중지">{{ menus.status }}</optiion>
-                                    {% endif %}
-                                </select>
-                                
-
-                                <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
+                            <span class="sale-time">{{ menus.sale_start_time|date:'H:i' }} ~
+                                {{ menus.sale_end_time|date:'H:i' }}</span>
+                            <span class="food-name">{{ menus.name }}</span>
+                            
+                            <input type="text" class="status" name="status[{{ menus.id }}]" value="{{ menus.status }}"/>
+                            
+                            <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
                             {% endif %}
-                            </div>
+                        </div>
                         {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="b">
-                    <div class="meal-time">중식</div>
-                    {% for menus in menus %}
+                        {% endfor %} 
+                    </div>
+                    <div class="meal">
+                        <div class="meal-time">중식</div>
+                        {% for menus in menus %}
                         {% if menus.cafeteria.name == cafe %}
-                            <div>
+                        <div class="menu">
                             {% if menus.meal == '중식' %}
-                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
-                                <span class="food-name">{{ menus.name }}</span>
-                                <select name="status[{{ menus.id }}]">
-                                    {% if menus.status == '판매 가능' %}
-                                    <optiion class="pos" value="판매 가능">{{ menus.status }}</option>
-                                    {% else %}
-                                    <optiion class="neg" value="판매 중지">{{ menus.status }}</optiion>
-                                    {% endif %}
-                                </select>
-                                
-                                <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
+                            <span class="sale-time">{{ menus.sale_start_time|date:'H:i' }} ~
+                                {{ menus.sale_end_time|date:'H:i' }}</span>
+                            <span class="food-name">{{ menus.name }}</span>
+                            
+                            <input type="text" class="status" name="status[{{ menus.id }}]" value="{{ menus.status }}"/>
+                            
+                            <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
                             {% endif %}
-                            </div>
+                        </div>
                         {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="c">
-                    <div class="meal-time">석식</div>
-                    {% for menus in menus %}
+                        {% endfor %} 
+                    </div>
+                    <div class="meal">
+                        <div class="meal-time">석식</div>
+                        {% for menus in menus %}
                         {% if menus.cafeteria.name == cafe %}
-                            <div>
+                        <div class="menu">
                             {% if menus.meal == '석식' %}
-                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
-                                <span class="food-name">{{ menus.name }}</span>
-                                <select name="status[{{ menus.id }}]">
-                                    {% if menus.status == '판매 가능' %}
-                                    <optiion class="pos" value="판매 가능">{{ menus.status }}</option>
-                                    {% else %}
-                                    <optiion class="neg" value="판매 중지">{{ menus.status }}</optiion>
-                                    {% endif %}
-                                </select>
-
-                                <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
+                            <span class="sale-time">{{ menus.sale_start_time|date:'H:i' }} ~
+                                {{ menus.sale_end_time|date:'H:i' }}</span>
+                            <span class="food-name">{{ menus.name }}</span>
+                            
+                            <input type="text" class="status" name="status[{{ menus.id }}]" value="{{ menus.status }}"/>
+                            
+                            <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
                             {% endif %}
-                            </div>
+                        </div>
                         {% endif %}
-                    {% endfor %}
-
+                        {% endfor %}
+                    </div>
                 </div>
 
             </div>

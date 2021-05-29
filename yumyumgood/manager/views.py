@@ -68,6 +68,7 @@ def menu_update(request, date):
     year = dates[0]
     month = dates[1]
     day = dates[2]
+
     for i in range(1, allmenu.count()+1) :
         changeMenu = Menu.objects.get(id = i)
         saleDate = str(changeMenu.sale_date)
@@ -89,3 +90,5 @@ def menu_update(request, date):
         }
 
     return redirect(f'/{date}/')
+
+
