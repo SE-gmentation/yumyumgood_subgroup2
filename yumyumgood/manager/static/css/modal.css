@@ -1,38 +1,25 @@
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active, 
+.btn-primary:active:focus:not(:disabled):not(.disabled),
+.btn:focus, .btn:active, .btn:hover{
+    box-shadow: none!important;
+    outline: 0;
+}
+
 :root{
     --space: 5px;
     --blue: #5091F4;
     --blue-dark: darken(--blue, 5%);
 }
-body{
-  font-family: 'Helvetica', arial;
-}
 
 /* button */
-.btn{
+.btn-calendar{
   background-color: Transparent;
   background-repeat:no-repeat;
   border: none;
   cursor:pointer;
   overflow: hidden;
-}
-
-btn:hover{
-background: --blue-dark;
-}
-
-.btn-calendar{
   outline:none;
   font-size: x-large;
-}
-
-.btn-control{
-  color: white;
-  font-size: 30px;
-  text-decoration: none;
-  position: absolute; right: 5px; top: 0;
-}
-.btn-control:hover{
-    color: darken(white, 10%);
 }
   
 

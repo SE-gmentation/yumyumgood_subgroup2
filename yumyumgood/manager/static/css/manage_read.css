@@ -1,6 +1,11 @@
 /* 미디어 쿼리 */
 @media (min-width: 320px) and (max-width: 480px) {
-
+    .btn-primary:hover,.btn-primary:focus,.btn-primary:active, 
+    .btn-primary:active:focus:not(:disabled):not(.disabled),
+    .btn:focus, .btn:active, .btn:hover{
+        box-shadow: none!important;
+        outline: 0;
+    }
     .body {
         padding-bottom: 50px;
         border: 3px solid black;
@@ -36,7 +41,6 @@
 
     #update-btn {
         margin: 20px 0;
-        margin-left: 67%;
     }
 
 }
