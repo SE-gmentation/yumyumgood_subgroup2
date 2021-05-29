@@ -3,16 +3,13 @@
 
     .body {
         padding-bottom: 30px;
-        margin: auto 0px;
+        margin-top: 20%;
     }
 
     a {
         text-decoration: none;
     }
 
-    a:hover {
-        background: yellowgreen;
-    }
 
     #name span{
         font-size: 50px;
@@ -22,21 +19,26 @@
         align-items: center;
     }
 
+    #cafename span{
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 
     #meal-button a {
-        float: right;
-        display: block;
+        margin-left: 78%;
+        font-size: 20px;
+        /* display: block;
         text-align: center;
         font-size: 25px;
-        margin: .25rem;
-        margin-bottom: 25px;
-        margin-right: 12px;
+
         padding: .5rem 1rem;
         text-decoration: none;
         font-weight: bold;
-        color: white;
-        width: 20%;
-        background: teal;
+        width: 20%; */
     }
     ul {
         list-style: none;
@@ -62,9 +64,7 @@
         margin-top: 30px;
         text-decoration: none;
         font-weight: bold;
-        color: white;
-        width: 90%;
-        background: teal;
+        width: 100%;
     }
     
     

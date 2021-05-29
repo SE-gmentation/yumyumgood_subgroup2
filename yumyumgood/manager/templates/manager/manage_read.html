@@ -1,9 +1,9 @@
 
 <h5>success</h5>
-date
-{{ date }}
+{{ cafe }}
+
 {% for menus in menus %}
-    {% if menus.cafeteria.name == "참슬기식당(310관 B4층)" %}
+    {% if menus.cafeteria.name == cafe %}
         <div class="image">{{ menus.foods }}</div>
     {% endif %}
 {% endfor %}
