@@ -28,6 +28,11 @@ class Menu(models.Model):
         ('석식', '석식'),
     )
 
+    STATUS_CHOICES = (
+        ('판매 가능', '판매 가능'),
+        ('판매 중지', '판매 중지'),
+    )
+
     name = models.CharField(max_length=20)
     meal = models.CharField(max_length=2, choices=MEAL_CHOICES)
     sale_start_time = models.TimeField()
@@ -35,6 +40,7 @@ class Menu(models.Model):
     sale_date = models.DateField()
     quantity = models.PositiveIntegerField(null=True)
     foods = models.TextField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, null=True)
     cafeteria = models.ForeignKey("Cafeteria", on_delete=models.CASCADE)
 
     def __str__(self):

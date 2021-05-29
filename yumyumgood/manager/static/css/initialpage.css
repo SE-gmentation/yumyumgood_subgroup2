@@ -2,8 +2,10 @@
 @media (min-width: 320px) and (max-width: 480px) {
 
     .body {
-        padding-bottom: 30px;
-        margin-top: 20%;
+        padding-bottom: 50px;
+        padding-top: 20px;
+        border: 3px solid black;
+        border-radius: 2%;
     }
 
     a {

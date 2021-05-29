@@ -1,9 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>메뉴 상태 관리 화면</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href = "{% static 'css/manage_read.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class = "body">
+            <div class="header">
+                <a href="{% url 'manager:initial_page' %}"><</a>
+            </div>
 
-<h5>success</h5>
-{{ cafe }}
+            <div class="choose-date">
+                <div class="btns">
+                    <button type="button" class="btn btn-outline-dark"><</button>
+                    <span id = "now-date">{{ year }}년 {{ month }}월 {{ day }}일</span>
+                    <button type="button" class="btn btn-outline-dark">></button>
+                </div>  
+                <div id="update-btn" class="btn btn-outline-dark">정보 수정</div>
+            </div>
+
+            <div class="menus">
+                
+                        <!-- <div class="food-name">{{ menus.foods }}</div> -->
+                <div class="a">
+                    <div class="meal-time">조식</div>
+                    {% for menus in menus %}
+                        {% if menus.cafeteria.name == cafe %}
+                            <div>
+                            {% if menus.meal == '조식' %}
+                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                                <span class="food-name">{{ menus.name }}</span>
+                                {% if menus.status == '판매 가능' %}
+                                    <span class="pos">{{ menus.status }}</span>
+                                {% else %}
+                                    <span class="neg">{{ menus.status }}</span>
+                                {% endif %}
+                                <span class="quantity">{{ menus.quantity }}인분</span>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="b">
+                    <div class="meal-time">중식</div>
+                    {% for menus in menus %}
+                        {% if menus.cafeteria.name == cafe %}
+                            <div>
+                            {% if menus.meal == '중식' %}
+                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                                <span class="food-name">{{ menus.name }}</span>
+                                {% if menus.status == '판매 가능' %}
+                                    <span class="pos">{{ menus.status }}</span>
+                                {% else %}
+                                    <span class="neg">{{ menus.status }}</span>
+                                {% endif %}
+                                <span class="quantity">{{ menus.quantity }}인분</span>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="c">
+                    <div class="meal-time">석식</div>
+                    {% for menus in menus %}
+                        {% if menus.cafeteria.name == cafe %}
+                            <div>
+                            {% if menus.meal == '석식' %}
+                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                                <span class="food-name">{{ menus.name }}</span>
+                                {% if menus.status == '판매 가능' %}
+                                    <span class="pos">{{ menus.status }}</span>
+                                {% else %}
+                                    <span class="neg">{{ menus.status }}</span>
+                                {% endif %}
+                                <span class="quantity">{{ menus.quantity }}인분</span>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
+
 
 {% for menus in menus %}
     {% if menus.cafeteria.name == cafe %}
-        <div class="image">{{ menus.foods }}</div>
+        
     {% endif %}
 {% endfor %}

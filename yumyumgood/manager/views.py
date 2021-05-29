@@ -18,11 +18,19 @@ def menu_read(request, date):
 
     menus = Menu.objects.filter(sale_date = date)
     profile = Profile.objects.get(user = request.user)
+
     cafe = profile.Cafeteria.name
+    dates = date.split("-")
+    year = dates[0]
+    month = dates[1]
+    day = dates[2]
 
     data={
         'menus' : menus,
-        'cafe' : cafe
+        'cafe' : cafe,
+        'year' : year,
+        'month' : month,
+        'day' : day
     }
 
     return render(request,'manager/manage_read.html', data)
