@@ -11,11 +11,12 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     role = models.CharField(max_length=1, choices=ROLE_CHOICES)
+    Cafeteria = models.ForeignKey("Cafeteria", on_delete=models.CASCADE, null = True)
 
 
 class Cafeteria(models.Model):
     name = models.CharField(max_length=20)
-    manager = models.ForeignKey("Profile", on_delete=models.SET_NULL, null=True)
+    
 
     def __str__(self):
         return '{}'.format(self.name)
