@@ -43,5 +43,9 @@ class Menu(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, null=True)
     cafeteria = models.ForeignKey("Cafeteria", on_delete=models.CASCADE)
 
+    def getPk(self) :
+        return self.id
+
     def __str__(self):
         return '{}'.format(self.name)
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>메뉴 상태 관리 화면</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href = "{% static 'css/manage_read.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- icon -->
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+        <!-- 부트스트랩 -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- jQuery -->
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <!-- datepicker -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.standalone.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.kr.min.js"></script>
+        
+    </head>
+    <body>
+        
+        <form action="{% url 'manager:menu_update' nowdate %}" method="POST" enctype="multipart/form-data" id="menu_update">
+            {% csrf_token %}
+
+            <div class="header">
+                <a href="{% url 'manager:initial_page' %}"><</a>
+            </div>
+
+            <div class="choose-date">
+                <div class="modal-btns">
+                <span>
+                    <button type="submit" id="update-btn" class="update-btn">저장하기</button>
+                </span>
+                </div> 
+            </div>
+
+            <div class="menus">
+                
+                        <!-- <div class="food-name">{{ menus.foods }}</div> -->
+                <div class="a">
+                    <div class="meal-time">조식</div>
+                    {% for menus in menus %}
+                        {% if menus.cafeteria.name == cafe %}
+                            <div>
+                            {% if menus.meal == '조식' %}
+                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                                <span class="food-name">{{ menus.name }}</span>
+                                
+                                <select name="order" form="myForm">
+                                    <option value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</option>
+                                    <option value="판매 중지" name = "status[{{ menus.id }}]">판매 중지</option>
+                                </select>
+
+                                <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="b">
+                    <div class="meal-time">중식</div>
+                    {% for menus in menus %}
+                        {% if menus.cafeteria.name == cafe %}
+                            <div>
+                            {% if menus.meal == '중식' %}
+                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                                <span class="food-name">{{ menus.name }}</span>
+                                
+                                <select name="order" form="myForm">
+                                    <option value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</option>
+                                    <option value="판매 중지" name = "status[{{ menus.id }}]">판매 중지</option>
+                                </select>
+                                
+                                <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="c">
+                    <div class="meal-time">석식</div>
+                    {% for menus in menus %}
+                        {% if menus.cafeteria.name == cafe %}
+                            <div>
+                            {% if menus.meal == '석식' %}
+                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                                <span class="food-name">{{ menus.name }}</span>
+                                
+                                <select name="order" form="myForm">
+                                    <option value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</option>
+                                    <option value="판매 중지" name = "status[{{ menus.id }}]">판매 중지</option>
+                                </select>
+
+                                <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+
+            </div>
+    
+        
+        </form>
+     
+    
+
+
+    
+    </body>
+</html>
