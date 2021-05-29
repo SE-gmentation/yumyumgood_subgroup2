@@ -17,11 +17,12 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
   <!-- jQuery -->
   <script src="http://code.jquery.com/jquery.min.js"></script>
-  <!-- 한글화 및 한국식 날짜표기를 적용한 datepicker 구성요소-->
+  <!-- datepicker -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.standalone.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.kr.min.js"></script>
-
+  
 </head>
 <body>
   <div class="wrap">
@@ -36,14 +37,9 @@
   <!-- Modal -->
   <div class="modal" id="modal-calendar" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-header">
-        <a href="#" class="btn-control" aria-hidden="true"><</a>
-        <h2>2021-05-27</h2>
-        <a href="#" class="btn-control" aria-hidden="true">></a>
-      </div>
-      <div class="modal-body">
-        <div class="input-group input-append date" id="dateRangePicker"> </div>
-      </div>
+      <div id='sv'>
+      <div class="input-group input-append date" id="datePicker" value='2021-05-30'> </div>
+    </div>
     </div>
   </div>
   <!-- /Modal -->
@@ -66,15 +62,29 @@
 
   <!-- date picker script -->
   <script type="text/javascript">
-    $('#dateRangePicker').datepicker({
-      format: "yyyy-mm-dd",
-      language: "kr"
-    });
 
-    $('#click-btn').on('click', function() {
-      var data = $('#dateRangePicker').var();
-      alert(date);
+    $('#datePicker').datepicker({
+      format: "yyyy-mm-dd",
+      language: "kr",
+      autoclose: true,
+      todayHighlight: true,
+      templates : {
+          leftArrow: '<i class="fas fa-chevron-left"></i>',
+          rightArrow: '<i class="fas fa-chevron-right"></i>'
+        },
+    }).on('changeDate', function(e) {
+
+      var formattedDate = new Date(e.date);
+      var d = formattedDate.getDate();
+      var m =  formattedDate.getMonth() + 1;
+      var y = formattedDate.getFullYear();
+
+      target = y + "-" + ("0"+m.toString()).slice(-2) + "-" + ("0"+d.toString()).slice(-2);
+      $(modal).hide();
+      // alert(target);
     });
+    
   </script>
+
 </body>
 </html>
