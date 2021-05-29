@@ -1,4 +1,3 @@
-/* 미디어 쿼리 */
 
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active, 
 .btn-primary:active:focus:not(:disabled):not(.disabled),
@@ -11,7 +10,6 @@
 }
 
 .wrap{
-    
     width: 500px;
     margin: auto;
 }
@@ -20,19 +18,25 @@
     background-color: #007BFF;
     padding-bottom: 5px;
     width: 100%;
+    height: 58px;
 }
 
 .header a {
     color: white;
     font-size: 40px;
-    padding-left: 20px;
+    padding-left: 30px;
     text-decoration: none;
 }
 
 .header a:hover { text-decoration:none !important }
 
 .choose-date{
-    padding-top: 20px;
+    padding-top: 30px;
+}
+
+.date-btns{
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .choose-date .btns{
@@ -41,9 +45,22 @@
 }
 
 #now-date {
+    font-size: 30px;
+    font-weight: 800;
     padding-top: 5px;
+    font-family: 'Cabin', sans-serif;
 }
 
 #update-btn {
     margin: 20px 0;
+}
+
+.change-date-btn {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border-radius: 10px;
+    padding: 2px 12px;
+    cursor:pointer;
+    overflow: hidden;
+    font-size: x-large;
 }

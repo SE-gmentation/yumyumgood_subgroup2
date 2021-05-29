@@ -37,34 +37,33 @@
     <div class="body">
         <div class="wrap">
             <div class="header">
-                <a href="{% url 'manager:initial_page' %}">
-                    <</a> </div> <div class="choose-date">
-                        <div class="date-btns">
-                            <button type="button" class="yesterday-btn" id="{{ nowdate }}"
-                                onclick="changeYesterday(this.id)">
-                                <</button> <span id="now-date">{{ year }}년 {{ month }}월 {{ day }}일</span>
-                                    <button type="button" class="tomorrow-btn" id="{{ nowdate }}"
-                                        onclick="changeTomorrow(this.id)">></button>
-                        </div>
-                        <div class="modal-btns">
-                            <span>
-                                <!-- calendar -->
-                                <button id="btn-calendar" class="btn btn-calendar">
-                                    <i class="far fa-calendar"></i>
-                                </button>
-                                <button type="button" id="update-btn" class="update-btn">정보 수정</button>
-                            </span>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal" id="modal-calendar" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div id='sv'>
-                                    <div class="input-group input-append date" id="datePicker" value='2021-05-30'>
-                                    </div>
-                                </div>
+                <a href="{% url 'manager:initial_page' %}"><i class="fas fa-chevron-left"></i></a> 
+            </div> 
+            <div class="choose-date">
+                <div class="date-btns">
+                    <button class="change-date-btn" id="{{ nowdate }}" onclick="changeYesterday(this.id)"><i class="fas fa-chevron-left"></i></button>
+                    <span id="now-date">{{ year }}년 {{ month }}월 {{ day }}일</span>
+                    <button class="change-date-btn" id="{{ nowdate }}" onclick="changeTomorrow(this.id)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="modal-btns">
+                    <span>
+                        <!-- calendar -->
+                        <button id="btn-calendar" class="btn btn-calendar">
+                            <i class="far fa-calendar"></i>
+                        </button>
+                        <button type="button" id="update-btn" class="update-btn">정보 수정</button>
+                    </span>
+                </div>
+                <!-- Modal -->
+                <div class="modal" id="modal-calendar" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div id='sv'>
+                            <div class="input-group input-append date" id="datePicker" value='2021-05-30'>
                             </div>
                         </div>
-                        <!-- /Modal -->
+                    </div>
+                </div>
+                <!-- /Modal -->
             </div>
 
             <div class="menus">
