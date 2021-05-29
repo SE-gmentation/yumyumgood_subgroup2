@@ -29,7 +29,8 @@ def menu_read(request, date):
         'cafe' : cafe,
         'year' : year,
         'month' : month,
-        'day' : day
+        'day' : day,
+        'nowdate' : date,
     }
 
     return render(request,'manager/manage_read.html', data)

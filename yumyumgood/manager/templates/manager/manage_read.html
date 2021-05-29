@@ -33,9 +33,9 @@
 
             <div class="choose-date">
                 <div class="date-btns">
-                    <button type="button" class="yesterday"><</button>
+                    <button type="button" class="yesterday-btn" id="{{ nowdate }}" onclick="changeYesterday(this.id)"><</button>
                     <span id = "now-date">{{ year }}년 {{ month }}월 {{ day }}일</span>
-                    <button type="button" class="tomorrow">></button>
+                    <button type="button" class="tomorrow" id="tomorrow-btn">></button>
                 </div> 
                 <div class="modal-btns">
                 <span>
@@ -135,6 +135,19 @@
                 modal.style.display = "none";
             }
             }
+
+
+            function changeYesterday(nowdate) {
+                var formattedDate = new Date(nowdate);
+
+                formattedDate.setDate(formattedDate.getDate() - 1);
+                var d = formattedDate.getDate();
+                var m =  formattedDate.getMonth() + 1;
+                var y = formattedDate.getFullYear();
+                target = y + "-" + ("0"+m.toString()).slice(-2) + "-" + ("0"+d.toString()).slice(-2);
+                location.href = "{% url 'manager:menu_read' '2021-05-28' %}".replace(/2021-05-28/, target.toString());
+            }
+
         </script>
 
         <!-- date picker script -->
