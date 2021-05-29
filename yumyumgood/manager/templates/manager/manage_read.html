@@ -67,14 +67,14 @@
             <div class="menus">
 
                 <!-- <div class="food-name">{{ menus.foods }}</div> -->
-                <div class="a">
+                <div class="meal">
                     <div class="meal-time">조식</div>
                     {% for menus in menus %}
                     {% if menus.cafeteria.name == cafe %}
-                    <div>
+                    <div class="menu">
                         {% if menus.meal == '조식' %}
-                        <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~
-                            {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                        <span class="sale-time">{{ menus.sale_start_time|date:'H:i' }} ~
+                            {{ menus.sale_end_time|date:'H:i' }}</span>
                         <span class="food-name">{{ menus.name }}</span>
                         {% if menus.status == '판매 가능' %}
                         <span class="pos">{{ menus.status }}</span>
@@ -87,14 +87,14 @@
                     {% endif %}
                     {% endfor %}
                 </div>
-                <div class="b">
+                <div class="meal">
                     <div class="meal-time">중식</div>
                     {% for menus in menus %}
                     {% if menus.cafeteria.name == cafe %}
-                    <div>
+                    <div class="menu">
                         {% if menus.meal == '중식' %}
-                        <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~
-                            {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                        <span class="sale-time">{{ menus.sale_start_time|date:'H:i' }} ~
+                            {{ menus.sale_end_time|date:'H:i' }}</span>
                         <span class="food-name">{{ menus.name }}</span>
                         {% if menus.status == '판매 가능' %}
                         <span class="pos">{{ menus.status }}</span>
@@ -107,17 +107,17 @@
                     {% endif %}
                     {% endfor %}
                 </div>
-                <div class="c">
+                <div class="meal">
                     <div class="meal-time">석식</div>
                     {% for menus in menus %}
                     {% if menus.cafeteria.name == cafe %}
-                    <div>
+                    <div class="menu">
                         {% if menus.meal == '석식' %}
-                        <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~
-                            {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                        <span class="sale-time">{{ menus.sale_start_time|date:'H:i' }} ~
+                            {{ menus.sale_end_time|date:'H:i' }}</span>
                         <span class="food-name">{{ menus.name }}</span>
                         {% if menus.status == '판매 가능' %}
-                        <span class="pos">{{ menus.status }}</span>
+                        <span class="pos">{{ menus.status  }}</span>
                         {% else %}
                         <span class="neg">{{ menus.status }}</span>
                         {% endif %}
