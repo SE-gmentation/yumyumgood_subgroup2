@@ -3,6 +3,7 @@
 date
 {{ date }}
 {% for menus in menus %}
-    {{ menus }}
-    <div class="image">{{ menus.foods }}</div>
+    {% if menus.cafeteria.name == "참슬기식당(310관 B4층)" %}
+        <div class="image">{{ menus.foods }}</div>
+    {% endif %}
 {% endfor %}

@@ -17,6 +17,9 @@ class Cafeteria(models.Model):
     name = models.CharField(max_length=20)
     manager = models.ForeignKey("Profile", on_delete=models.SET_NULL, null=True)
 
+    def __str__(self):
+        return '{}'.format(self.name)
+
 class Menu(models.Model):
     MEAL_CHOICES = (
         ('조식', '조식'),
@@ -32,3 +35,6 @@ class Menu(models.Model):
     quantity = models.PositiveIntegerField(null=True)
     foods = models.TextField()
     cafeteria = models.ForeignKey("Cafeteria", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return '{}'.format(self.name)
