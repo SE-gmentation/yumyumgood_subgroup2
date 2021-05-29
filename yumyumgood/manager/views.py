@@ -2,7 +2,6 @@ from .models import *
 from django.shortcuts import render
 from datetime import datetime
 
-# Create your views here.
 def initial_page(request):
     date = datetime.today().strftime("%Y-%m-%d")
     profile = Profile.objects.get(user = request.user)
@@ -37,4 +36,7 @@ def menu_read(request, date):
 
 
 def menu_update():
-    return null
+    return None
+
+def manager_page(request):
+    return render(request, 'manager/managerPage.html')
