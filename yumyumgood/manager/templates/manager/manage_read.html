@@ -1,9 +1,169 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>메뉴 상태 관리 화면</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href = "{% static 'css/manage_read.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- icon -->
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+        <!-- 부트스트랩 -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <!-- jQuery -->
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+        <!-- datepicker -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.standalone.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.kr.min.js"></script>
+        
+    </head>
+    <body>
+        <div class = "body">
+            <div class="header">
+                <a href="{% url 'manager:initial_page' %}"><</a>
+            </div>
 
-<h5>success</h5>
-date
-{{ date }}
-{% for menus in menus %}
-    {% if menus.cafeteria.name == "참슬기식당(310관 B4층)" %}
-        <div class="image">{{ menus.foods }}</div>
-    {% endif %}
-{% endfor %}
+            <div class="choose-date">
+                <div class="date-btns">
+                    <button type="button" class="yesterday"><</button>
+                    <span id = "now-date">{{ year }}년 {{ month }}월 {{ day }}일</span>
+                    <button type="button" class="tomorrow">></button>
+                </div> 
+                <div class="modal-btns">
+                <span>
+                    <!-- calendar -->
+                    <button id="btn-calendar" class="btn btn-calendar">
+                        <i class="far fa-calendar"></i>
+                    </button>
+                    <button type="button" id="update-btn" class="update-btn">정보 수정</button>
+                </span>
+                </div> 
+                  <!-- Modal -->
+                <div class="modal" id="modal-calendar" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div id='sv'>
+                    <div class="input-group input-append date" id="datePicker" value='2021-05-30'> </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- /Modal -->
+            </div>
+
+            <div class="menus">
+                
+                        <!-- <div class="food-name">{{ menus.foods }}</div> -->
+                <div class="a">
+                    <div class="meal-time">조식</div>
+                    {% for menus in menus %}
+                        {% if menus.cafeteria.name == cafe %}
+                            <div>
+                            {% if menus.meal == '조식' %}
+                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                                <span class="food-name">{{ menus.name }}</span>
+                                {% if menus.status == '판매 가능' %}
+                                    <span class="pos">{{ menus.status }}</span>
+                                {% else %}
+                                    <span class="neg">{{ menus.status }}</span>
+                                {% endif %}
+                                <span class="quantity">{{ menus.quantity }}인분</span>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="b">
+                    <div class="meal-time">중식</div>
+                    {% for menus in menus %}
+                        {% if menus.cafeteria.name == cafe %}
+                            <div>
+                            {% if menus.meal == '중식' %}
+                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                                <span class="food-name">{{ menus.name }}</span>
+                                {% if menus.status == '판매 가능' %}
+                                    <span class="pos">{{ menus.status }}</span>
+                                {% else %}
+                                    <span class="neg">{{ menus.status }}</span>
+                                {% endif %}
+                                <span class="quantity">{{ menus.quantity }}인분</span>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="c">
+                    <div class="meal-time">석식</div>
+                    {% for menus in menus %}
+                        {% if menus.cafeteria.name == cafe %}
+                            <div>
+                            {% if menus.meal == '석식' %}
+                                <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
+                                <span class="food-name">{{ menus.name }}</span>
+                                {% if menus.status == '판매 가능' %}
+                                    <span class="pos">{{ menus.status }}</span>
+                                {% else %}
+                                    <span class="neg">{{ menus.status }}</span>
+                                {% endif %}
+                                <span class="quantity">{{ menus.quantity }}인분</span>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- modal script -->
+        <script>
+            var modal = document.getElementById("modal-calendar");
+            var btn = document.getElementById("btn-calendar");
+            
+            btn.onclick = function() {
+            modal.style.display = "block";
+            }
+
+            window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            }
+        </script>
+
+        <!-- date picker script -->
+        <script type="text/javascript">
+
+            $('#datePicker').datepicker({
+            format: "yyyy-mm-dd",
+            language: "kr",
+            autoclose: true,
+            todayHighlight: true,
+            templates : {
+                leftArrow: '<i class="fas fa-chevron-left"></i>',
+                rightArrow: '<i class="fas fa-chevron-right"></i>'
+                },
+            }).on('changeDate', function(e) {
+
+            var formattedDate = new Date(e.date);
+            var d = formattedDate.getDate();
+            var m =  formattedDate.getMonth() + 1;
+            var y = formattedDate.getFullYear();
+
+            target = y + "-" + ("0"+m.toString()).slice(-2) + "-" + ("0"+d.toString()).slice(-2);
+
+            location.href = "{% url 'manager:menu_read' '2021-05-28' %}".replace(/2021-05-28/, target.toString());
+            $(modal).hide();
+
+            // alert(target);
+            });
+            
+        </script>
+    </body>
+</html>
