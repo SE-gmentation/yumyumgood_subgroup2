@@ -43,7 +43,7 @@
                     <button id="btn-calendar" class="btn btn-calendar">
                         <i class="far fa-calendar"></i>
                     </button>
-                    <button type="button" id="update-btn" class="update-btn" href = "{% url 'manager:menu_edit' nowdate %}">정보 수정</button>
+                    <button type="button" id="update-btn" class="update-btn" onclick = 'location.href = "{% url 'manager:menu_edit' nowdate %}" '>정보 수정</button>
                 </span>
                 </div> 
                   <!-- Modal -->

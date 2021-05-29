@@ -53,11 +53,7 @@
                             {% if menus.meal == '조식' %}
                                 <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
                                 <span class="food-name">{{ menus.name }}</span>
-                                
-                                <select name="order" form="myForm">
-                                    <option value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</option>
-                                    <option value="판매 중지" name = "status[{{ menus.id }}]">판매 중지</option>
-                                </select>
+                                <button value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</button>
 
                                 <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
                             {% endif %}
@@ -73,11 +69,7 @@
                             {% if menus.meal == '중식' %}
                                 <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
                                 <span class="food-name">{{ menus.name }}</span>
-                                
-                                <select name="order" form="myForm">
-                                    <option value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</option>
-                                    <option value="판매 중지" name = "status[{{ menus.id }}]">판매 중지</option>
-                                </select>
+                                <button value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</button>
                                 
                                 <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
                             {% endif %}
@@ -93,11 +85,7 @@
                             {% if menus.meal == '석식' %}
                                 <span class="sale-time">{{ menus.sale_start_time|date:'H:i:s' }} ~ {{ menus.sale_end_time|date:'H:i:s' }}</span>
                                 <span class="food-name">{{ menus.name }}</span>
-                                
-                                <select name="order" form="myForm">
-                                    <option value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</option>
-                                    <option value="판매 중지" name = "status[{{ menus.id }}]">판매 중지</option>
-                                </select>
+                                <button value="판매 가능" name = "status[{{ menus.id }}]">판매 가능</button>
 
                                 <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
                             {% endif %}

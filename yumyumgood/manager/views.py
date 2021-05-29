@@ -68,14 +68,12 @@ def menu_update(request, date):
     year = dates[0]
     month = dates[1]
     day = dates[2]
-    
     for i in range(1, allmenu.count()+1) :
-        changeMenu = Menu.objects.get(pk = i)
-        if changeMenu.sale_date == date and changeMenu.cafeteria == profile.Cafeteria :
-            print("!!!!!!!")
-            status=request.POST.get('status['+i+']')
-            quantity=request.POST.get('quantity['+i+']')
-
+        changeMenu = Menu.objects.get(id = i)
+        saleDate = str(changeMenu.sale_date)
+        if (saleDate == str(date) and changeMenu.cafeteria == profile.Cafeteria) :
+            status=request.POST.get('status['+str(i)+']')
+            quantity=request.POST.get('quantity['+str(i)+']')
             #DB에 바꿀 내용들
             changeMenu.status=status
             changeMenu.quantity=quantity
