@@ -18,7 +18,7 @@ register_converter(DateConverter, 'yyyy')
 
 urlpatterns = [
     path("", initial_page, name="initial_page"),
-    path("menu/", manager_page, name="manager"),
     url(r'^(?P<date>\d{4}-\d{2}-\d{2})/$', menu_read, name='menu_read'),
-    path("menumanage/<yyyy:date>/update/", menu_update, name="menu_update"),
+    url(r'^edit/(?P<date>\d{4}-\d{2}-\d{2})/$', menu_edit, name='menu_edit'),
+    url(r'^update/(?P<date>\d{4}-\d{2}-\d{2})/$', menu_update, name='menu_update')
 ]
