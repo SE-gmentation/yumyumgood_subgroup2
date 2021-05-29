@@ -11,6 +11,17 @@
   <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
   <!-- css -->
   <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+  <!-- 부트스트랩 -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <!-- jQuery -->
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <!-- 한글화 및 한국식 날짜표기를 적용한 datepicker 구성요소-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.kr.min.js"></script>
+
 </head>
 <body>
   <div class="wrap">
@@ -31,12 +42,13 @@
         <a href="#" class="btn-control" aria-hidden="true">></a>
       </div>
       <div class="modal-body">
-        <p>Calendar</p>
+        <div class="input-group input-append date" id="dateRangePicker"> </div>
       </div>
     </div>
   </div>
   <!-- /Modal -->
 
+  <!-- modal script -->
   <script>
     var modal = document.getElementById("modal-calendar");
     var btn = document.getElementById("btn-calendar");
@@ -51,6 +63,18 @@
       }
     }
   </script>
-  
+
+  <!-- date picker script -->
+  <script type="text/javascript">
+    $('#dateRangePicker').datepicker({
+      format: "yyyy-mm-dd",
+      language: "kr"
+    });
+
+    $('#click-btn').on('click', function() {
+      var data = $('#dateRangePicker').var();
+      alert(date);
+    });
+  </script>
 </body>
 </html>
