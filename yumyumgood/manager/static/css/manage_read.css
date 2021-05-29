@@ -1,46 +1,49 @@
 /* 미디어 쿼리 */
-@media (min-width: 320px) and (max-width: 480px) {
-    .btn-primary:hover,.btn-primary:focus,.btn-primary:active, 
-    .btn-primary:active:focus:not(:disabled):not(.disabled),
-    .btn:focus, .btn:active, .btn:hover{
-        box-shadow: none!important;
-        outline: 0;
-    }
-    .body {
-        padding-bottom: 50px;
-        border: 3px solid black;
-        border-radius: 2%;
-    }
 
-    .header {
-        background-color: #007BFF;
-        padding-bottom: 5px;
-    }
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active, 
+.btn-primary:active:focus:not(:disabled):not(.disabled),
+.btn:focus, .btn:active, .btn:hover{
+    box-shadow: none!important;
+    outline: 0;
+}
+.body {
+    padding-bottom: 50px;
+}
 
-    .header a {
-        color: white;
-        font-size: 40px;
-        padding-left: 20px;
-        text-decoration: none;
-    }
+.wrap{
+    
+    width: 500px;
+    margin: auto;
+}
 
-    .header a:hover { text-decoration:none !important }
+.header {
+    background-color: #007BFF;
+    padding-bottom: 5px;
+    width: 100%;
+}
 
-    .choose-date{
-        padding-top: 20px;
-    }
+.header a {
+    color: white;
+    font-size: 40px;
+    padding-left: 20px;
+    text-decoration: none;
+}
 
-    .choose-date .btns{
-        display: flex;
-        justify-content: space-around;
-    }
+.header a:hover { text-decoration:none !important }
 
-    #now-date {
-        padding-top: 5px;
-    }
+.choose-date{
+    padding-top: 20px;
+}
 
-    #update-btn {
-        margin: 20px 0;
-    }
+.choose-date .btns{
+    display: flex;
+    justify-content: space-around;
+}
 
+#now-date {
+    padding-top: 5px;
+}
+
+#update-btn {
+    margin: 20px 0;
 }
