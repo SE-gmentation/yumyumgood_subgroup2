@@ -21,5 +21,4 @@ urlpatterns = [
     url(r'^(?P<date>\d{4}-\d{2}-\d{2})/$', menu_read, name='menu_read'),
     url(r'^edit/(?P<date>\d{4}-\d{2}-\d{2})/$', menu_edit, name='menu_edit'),
     url(r'^update/(?P<date>\d{4}-\d{2}-\d{2})/$', menu_update, name='menu_update'),
-    path("ajax/", menu_ajax, name="interest_ajax"),
 ]

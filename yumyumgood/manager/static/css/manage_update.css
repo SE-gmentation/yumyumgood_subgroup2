@@ -116,3 +116,10 @@ span {
 .neg{
     color: red;
 }
+
+input {
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    margin-bottom: 10px !important;
+}
+

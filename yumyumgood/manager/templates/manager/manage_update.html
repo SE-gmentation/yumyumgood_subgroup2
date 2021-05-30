@@ -8,21 +8,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href = "{% static 'css/manage_read.css' %}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- icon -->
-        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-        <!-- css -->
-        <link rel="stylesheet" href="{% static 'css/modal.css' %}">
-        <!-- 부트스트랩 -->
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-        <!-- jQuery -->
-        <script src="http://code.jquery.com/jquery.min.js"></script>
-        <!-- datepicker -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.standalone.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.kr.min.js"></script>
         
     </head>
     <body>
@@ -54,9 +39,9 @@
                                 {{ menus.sale_end_time|date:'H:i' }}</span>
                             <span class="food-name">{{ menus.name }}</span>
                             
-                            <input type="text" class="status" name="status[{{ menus.id }}]" value="{{ menus.status }}"/>
-                            
-                            <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
+                            <input type="text" class="status[{{ menus.id }}]" name="status[{{ menus.id }}]" value="{{ menus.status }}" style="font-weight: 500;font-size: 18px;margin-bottom: 10px;width :100px;"/>
+                           
+                            <input type="text" class="quantity[{{ menus.id }}]" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}" style="font-weight: 500;font-size: 18px;margin-bottom: 10px;width :100px;"/>
                             {% endif %}
                         </div>
                         {% endif %}
@@ -72,9 +57,9 @@
                                 {{ menus.sale_end_time|date:'H:i' }}</span>
                             <span class="food-name">{{ menus.name }}</span>
                             
-                            <input type="text" class="status" name="status[{{ menus.id }}]" value="{{ menus.status }}"/>
+                            <input type="text" class="status[{{ menus.id }}]" name="status[{{ menus.id }}]" value="{{ menus.status }}" style="font-weight: 500;font-size: 18px;margin-bottom: 10px;width :100px;"/>
                             
-                            <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
+                            <input type="text" class="quantity[{{ menus.id }}]" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}" style="font-weight: 500;font-size: 18px;margin-bottom: 10px;width :100px;"/>
                             {% endif %}
                         </div>
                         {% endif %}
@@ -90,9 +75,9 @@
                                 {{ menus.sale_end_time|date:'H:i' }}</span>
                             <span class="food-name">{{ menus.name }}</span>
                             
-                            <input type="text" class="status" name="status[{{ menus.id }}]" value="{{ menus.status }}"/>
+                            <input type="text" class="status[{{ menus.id }}]" name="status[{{ menus.id }}]" value="{{ menus.status }}" style="font-weight: 500;font-size: 18px;margin-bottom: 10px;width :100px;"/>
                             
-                            <input type="text" class="quantity" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}"/>
+                            <input type="text" class="quantity[{{ menus.id }}]" name="quantity[{{ menus.id }}]" value="{{ menus.quantity }}" style="font-weight: 500;font-size: 18px;margin-bottom: 10px;width :100px;"/>
                             {% endif %}
                         </div>
                         {% endif %}
@@ -103,9 +88,7 @@
             </div>
         
         </form>
-     
-=
-        
+      
 
     
     </body>
