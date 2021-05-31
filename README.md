@@ -85,31 +85,31 @@
   - UC-2, UC-5 구현을 위한 DB 설계
 
   - ERD  
-  <img src="https://user-images.githubusercontent.com/52988414/119694819-8d46f700-be88-11eb-97ad-f872866d3c4b.png" height=300 />
+  <img src="https://user-images.githubusercontent.com/52988414/119694819-8d46f700-be88-11eb-97ad-f872866d3c4b.png" height=400 />
 
   - sqlite 적용  
-  <img src="https://user-images.githubusercontent.com/52988414/120183484-b67dd380-c24a-11eb-8aaf-caece689e776.png" height=500/>
+  <img src="https://user-images.githubusercontent.com/52988414/120183484-b67dd380-c24a-11eb-8aaf-caece689e776.png" height=600/>
 
 - **웹앱으로 페이지 구성**
   - 모바일 화면 크기로 웹페이지를 구성
   
-    <img src="https://user-images.githubusercontent.com/52988414/120182754-c34df780-c249-11eb-9d18-8418a8bcbc8f.png" height="150"/>
-    <img src="https://user-images.githubusercontent.com/52988414/120183627-e75e0880-c24a-11eb-8df8-c2d50fa1131c.png" height="150"/>
+    <img src="https://user-images.githubusercontent.com/52988414/120182754-c34df780-c249-11eb-9d18-8418a8bcbc8f.png" height="300"/>
+    <img src="https://user-images.githubusercontent.com/52988414/120183627-e75e0880-c24a-11eb-8df8-c2d50fa1131c.png" height="300"/>
 
 - **( UC-2 )  담당자 식당 별 인터페이스 페이지**
   - 접속한 user의 cafeteria storage를 조회하여 인터페이스 페이지를 구성한다.
   <p align="center">
-  <img src="https://user-images.githubusercontent.com/52988414/120185111-bf6fa480-c24c-11eb-8b75-0ca1f3f9bdde.png" width=150/>
+  <img src="https://user-images.githubusercontent.com/52988414/120185111-bf6fa480-c24c-11eb-8b75-0ca1f3f9bdde.png" width=300/>
   </p>
   
 - **( UC-2 )  메뉴 상태 관리**
   - 식당 정보화 date storage를 통해 오늘 날짜에 해당하는 조회 쿼리를 보내 Menu를 DB에서 불러옴.
   - 날짜 정보는 url parameter로 전송함.  
-  <img src="https://user-images.githubusercontent.com/52988414/120187181-71a86b80-c24f-11eb-887c-e052d9885c6a.png" height=20/>
+  <img src="https://user-images.githubusercontent.com/52988414/120187181-71a86b80-c24f-11eb-887c-e052d9885c6a.png" height=25/>
 
   - Menu 정보로 html 페이지를 렌더링함.
   <p align="center">
-  <img src="https://user-images.githubusercontent.com/52988414/120186224-2e013200-c24e-11eb-9749-9108c1e1caef.png" width=150/>
+  <img src="https://user-images.githubusercontent.com/52988414/120186224-2e013200-c24e-11eb-9749-9108c1e1caef.png" width=300/>
   </p>
 
 - **( UC-5 ) 캘린더 모달**
@@ -117,7 +117,8 @@
   - date storage 기준으로 캘린더 모달 구성
   
   <p align="center">
-  <img src="https://user-images.githubusercontent.com/52988414/120187405-b3391680-c24f-11eb-9aa4-ef8e16a97c22.png" width=150/>
+  <img src="https://user-images.githubusercontent.com/52988414/120187405-b3391680-c24f-11eb-9aa4-ef8e16a97c22.png" width=300/>
+  </p>
 
 - **( UC-2 ) 메뉴 정보 수정**
 
@@ -126,8 +127,9 @@
   - 저장하기 버튼을 선택하면 변경된 정보로 DB를 업데이트함.
 
   <p align="center">
-  <img src="https://user-images.githubusercontent.com/52988414/120188028-8e916e80-c250-11eb-8d9b-8e5fee4aa4ed.png" width=150/>
-
+  <img src="https://user-images.githubusercontent.com/52988414/120188028-8e916e80-c250-11eb-8d9b-8e5fee4aa4ed.png" width=300/>
+  </p>
+  
 <br/>
 
 ## 📍 SSD(Class Diagram) 대조표
@@ -158,7 +160,9 @@
 - 코드작업은 organization 내 yumyumgood_subgroup2에서 진행 했습니다.
 - DB 내용(Profile(User), Menu, Cafeteria)은 서버가 실행 된 로컬에서 http://127.0.0.1:8000/admin/ 사이트를 통해 일괄적으로 작성 및 관리하여 데모를 진행했습니다. 관련하여 궁금하신 점은 Issues 부탁드립니다.
 - Subgroup2는 Github의 Issues를 적극 활용하여 구현(개발)을 진행했습니다.
-<img src="https://user-images.githubusercontent.com/52988414/120179634-cf37ba80-c245-11eb-9ed9-c7c713337a43.png" width=300/>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/52988414/120179634-cf37ba80-c245-11eb-9ed9-c7c713337a43.png" width=600/>
+</p>
 
 
 
