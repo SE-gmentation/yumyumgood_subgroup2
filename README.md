@@ -1,3 +1,6 @@
+## ✨ Github Link
+
+- https://github.com/SE-gmentation/yumyumgood_subgroup2
 
 ## 📢 SubGroup N
 
@@ -67,23 +70,20 @@
 
 >   | 클래스명(함수명) |  SSD 내 컨셉(클래스)이름  |
 >   | --- | ---  |
->   |**a** |ssd|
->   |**b** |ssd|
->   |**c** |ssd|
->   |**d** |ssd|
->   |**e** |ssd|
->   |**f** |ssd|
->   |**g** |ssd|
-  
-<br/>
-
-## 🐛 Bugs
-- 미처 구현 못한것들..?근데 꼭 써야할까 ..
+>   |**Date Converter** : YYYY-MM-dd 형태로 url의 param으로 Date를 받음 |Date Accessor|
+>   |**profile = Profile.objects.get(user = request.user)** : sqlite에서 현재 접속한 User에 대한 정보를 조회|User DB Accessor|
+>   |**menus = Menu.objects.filter(sale_date = date, cafeteria = profile.Cafeteria)** : sqlite에서 현재 접속한 user의 식당인 지, 판매 날짜가 일치하는 지 확인한 메뉴 데이터를 조회 |Menu DB Accessor|
+>   |**return render(request,'manager/initialpage.html', data)** |interfacePage := render(menuList)|
+>   |**return render(request,'manager/manage_read.html', data)** |savePage := saveRender()|
+>   |**return render(request,'manager/manage_update.html', data)** |editPage := renderEdit()|
+>   |**def menu_edit(request, date)** |updateStatus(status)|
+>   |**status=request.POST.get('status['+str(i)+']')**<br>**quantity=request.POST.get('quantity['+str(i)+']')**<br>#DB에 바꿀 내용들<br>**changeMenu.status=status**<br>**changeMenu.quantity=quantity**|setStatus, setAmount|
+>   |**def menu_update(request, date)**|edit()|
 
 <br/>
 
 ## 💻 참고사항
-- 코드작업은 organization 내 yumyumgood_subgroup1에서 햇숩니다,,
+- 코드작업은 organization 내 yumyumgood_subgroup2에서 진행 했습니다.
 - 무튼 교수님한테 얘기드려야 할 사항들 쓰기
 
 
